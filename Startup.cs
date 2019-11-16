@@ -67,21 +67,11 @@ namespace GroupWebApplication
                     pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
-            
         }
-
-        async static void GetRequest(String url)
-        {    //putting calls in using statements because they will be closed after being used
-            using(HttpClient client = new HttpClient())
-            {
-                using (HttpResponseMessage responce = await client.GetAsync(/*put in url*/))
-                {
-                    using (HttpContent content = responce.Content)
-                    {
-                        
-                    }
-                }
-            }
-        }
+        
+        
+        
+        
+        
     }
 }
