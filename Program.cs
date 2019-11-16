@@ -22,7 +22,7 @@ namespace GroupWebApplication
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder => { webBuilder.UseStartup<Startup>(); });
-
+        
         static async Task GetDailyImage()
         {
             String dailyPath = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY";
