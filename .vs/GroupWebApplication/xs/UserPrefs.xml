@@ -1,8 +1,16 @@
 ﻿<Properties StartupConfiguration="{4FC6C698-E456-48AA-809D-A86B96BB0322}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Properties/launchSettings.json">
-    <Files>
-      <File FileName="Properties/launchSettings.json" Line="23" Column="9" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="GroupWebApplication" expanded="True">
+            <Node name="GroupWebApplication" expanded="True">
+              <Node name="Data" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.GroupWebApplication PreferredExecutionTarget="/Applications/Safari.app" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

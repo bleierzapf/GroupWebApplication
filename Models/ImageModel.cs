@@ -4,7 +4,8 @@ namespace GroupWebApplication.Models
 {
     public class ImageModel
     {
-        public DateTime Date { get; set; }
+        public int ID { get; set; }
+        public String Date { get; set; }
         public String Explanation { get; set; }
         public String Media_Type { get; set; }
         public String Title { get; set; }

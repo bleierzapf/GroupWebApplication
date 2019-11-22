@@ -3,6 +3,7 @@ using System.Data;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
+using GroupWebApplication.Data;
 using GroupWebApplication.Models;
 using Newtonsoft.Json;
 
@@ -29,9 +30,17 @@ namespace GroupWebApplication.Controllers
 
         private static void DailyImageToDataTable(ImageModel dailyImage)
         {
+            ImageModel tmp = new ImageModel();
+            
+            ImageDbContext db = new ImageDbContext();
+            tmp = db.ImageDbSet.Find(0);
+
+            tmp = dailyImage;
+            
+/*
             DataTable imageTable = new DataTable();
             imageTable.Columns.Add("Pk", typeof(int));
-            imageTable.Columns.Add("Date", typeof(DateTime));
+            imageTable.Columns.Add("Date", typeof(String));
             imageTable.Columns.Add("Explanation", typeof(String));
             imageTable.Columns.Add("Media_Type", typeof(String));
             imageTable.Columns.Add("Title", typeof(String));
@@ -47,7 +56,7 @@ namespace GroupWebApplication.Controllers
             dr["Url"] = dailyImage.Url;
             dr["Hdurl"] = dailyImage.Hdurl;
             
-            Console.WriteLine("From Table " + dailyImage.Url);
+            Console.WriteLine("From Table " + dailyImage.Url);*/
         }
         
         static async Task<ImageModel> GetImageAsync(ImageModel imageModel, String path)
