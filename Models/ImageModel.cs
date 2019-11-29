@@ -1,9 +1,11 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace GroupWebApplication.Models
 {
     public class ImageModel
     {
+        [Key]
         public String Date { get; set; }
         public String Explanation { get; set; }
         public String Media_Type { get; set; }

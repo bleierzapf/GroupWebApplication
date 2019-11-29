@@ -29,7 +29,10 @@
         <PackageReference Include="PackageManager-Drop-Db" Version="1.1.1" />
         <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="3.0.0" />
         <PackageReference Include="System.Data.SqlClient" Version="4.7.0" />
-        <PackageReference Include="System.Net.Http.Formatting.Extension" Version="5.2.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="wwwroot\logos" />
     </ItemGroup>
 
 </Project>
