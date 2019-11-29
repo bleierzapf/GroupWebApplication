@@ -14,21 +14,23 @@ namespace GroupWebApplication.Controllers
         private static ImageModel _dailyImage = new ImageModel();
 
         public static async Task GetDailyImage()
-        {
+        { 
             var rand = new Random();
             try
-            {
-                //random information gathering
-                //var month = rand.Next(1, 13); 
-                //var day = rand.Next(1, 30);  
-                //var year = rand.Next(2015, 2020);
-                //String date = "&date=" + year + "-" + month + "-" + day;
+                { 
 
-                String dailyPath = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY";
+                    //random information gathering
+                    var month = rand.Next(1, 13); 
+                    var day = rand.Next(1, 30);  
+                    var year = rand.Next(2015, 2020);
+                    //random information gathering
+                    String date = "&date=" + year + "-" + month + "-" + day;
+                    
+                    String dailyPath = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY" + date;
 
-                _dailyImage = await GetImageAsync(_dailyImage, dailyPath);
-                ImageToDb(_dailyImage);
-            }
+                    _dailyImage = await GetImageAsync(_dailyImage, dailyPath); 
+                    ImageToDb(_dailyImage);
+                }
             catch (Exception e) 
             { 
                 Console.WriteLine(e.Message); 

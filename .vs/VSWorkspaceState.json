@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Migrations",
+    "\\Views",
+    "\\Views\\Home"
   ],
+  "SelectedNode": "\\Views\\Home\\AltIndex.cshtml",
   "PreviewInSolutionExplorer": false
 }

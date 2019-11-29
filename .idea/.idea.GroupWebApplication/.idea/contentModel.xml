@@ -18,12 +18,11 @@
         <e p="HomeController.cs" t="Include" />
         <e p="ImageApi.cs" t="Include" />
         <e p="ImageController.cs" t="Include" />
-        <e p="VideoController.cs" t="Include" />
       </e>
       <e p="Data" t="Include">
         <e p="ApplicationDbContext.cs" t="Include" />
-        <e p="AzureImageContext.cs" t="Include" />
-        <e p="AzureVoteContext.cs" t="Include" />
+        <e p="DatabaseInitializer.cs" t="Include" />
+        <e p="ImageDbContext.cs" t="Include" />
         <e p="Migrations" t="Include">
           <e p="00000000000000_CreateIdentitySchema.cs" t="Include" />
           <e p="00000000000000_CreateIdentitySchema.Designer.cs" t="Include" />
@@ -33,24 +32,9 @@
       <e p="global.json" t="Include" />
       <e p="GroupWebApplication.csproj" t="IncludeRecursive" />
       <e p="GroupWebApplication.sln" t="IncludeFlat" />
-      <e p="Migrations" t="Include">
-        <e p="20191127235347_db.cs" t="Include" />
-        <e p="20191127235347_db.Designer.cs" t="Include" />
-        <e p="20191129061944_imagedbcontext.cs" t="Include" />
-        <e p="20191129061944_imagedbcontext.Designer.cs" t="Include" />
-        <e p="AzureImageContextModelSnapshot.cs" t="Include" />
-        <e p="AzureVote" t="Include">
-          <e p="20191127235711_db.cs" t="Include" />
-          <e p="20191127235711_db.Designer.cs" t="Include" />
-          <e p="20191129061553_votedbcontext.cs" t="Include" />
-          <e p="20191129061553_votedbcontext.Designer.cs" t="Include" />
-          <e p="AzureVoteContextModelSnapshot.cs" t="Include" />
-        </e>
-      </e>
       <e p="Models" t="Include">
         <e p="ErrorViewModel.cs" t="Include" />
         <e p="ImageModel.cs" t="Include" />
-        <e p="VoteModel.cs" t="Include" />
       </e>
       <e p="nasaAPIinfo.txt" t="Include" />
       <e p="obj" t="ExcludeRecursive">
@@ -78,9 +62,6 @@
           <e p="_LoginPartial.cshtml" t="Include" />
           <e p="_ValidationScriptsPartial.cshtml" t="Include" />
           <e p="Error.cshtml" t="Include" />
-        </e>
-        <e p="Video" t="Include">
-          <e p="Index.cshtml" t="Include" />
         </e>
       </e>
       <e p="wwwroot" t="Include">
@@ -143,9 +124,6 @@
             <e p="jquery.validate.unobtrusive.min.js" t="Include" />
             <e p="LICENSE.txt" t="Include" />
           </e>
-        </e>
-        <e p="logos" t="Include">
-          <e p="nasalogo.jpg" t="Include" />
         </e>
       </e>
     </e>

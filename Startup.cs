@@ -26,10 +26,15 @@ namespace GroupWebApplication
                 options.UseSqlite(
                     Configuration.GetConnectionString("DefaultConnection")));
             
+            services.AddControllersWithViews();
+
+            services.AddDbContext<ApplicationDbContext>(options =>
+                    options.UseSqlite(Configuration.GetConnectionString("ApplicationDbContext")));
+            
             services.AddCors();
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
-            services.AddControllersWithViews();
+            
             services.AddRazorPages();
         }
 
