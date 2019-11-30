@@ -1,16 +1,11 @@
 ﻿<Properties StartupConfiguration="{4FC6C698-E456-48AA-809D-A86B96BB0322}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Program.cs">
-    <Files>
-      <File FileName="../../../../../../Users/brian/Library/Caches/VisualStudio/8.0/MSBuild/14902_1/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.FrameworkReferenceResolution.targets" Line="263" Column="76" />
-      <File FileName="Startup.cs" Line="22" Column="24" />
-      <File FileName="Program.cs" Line="24" Column="1" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="GroupWebApplication" expanded="True">
             <Node name="GroupWebApplication" expanded="True">
-              <Node name="Program.cs" selected="True" />
+              <Node name="Data" selected="True" />
             </Node>
           </Node>
         </State>

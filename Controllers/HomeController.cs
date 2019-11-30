@@ -1,18 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using GroupWebApplication.Data;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using GroupWebApplication.Models;
+using System.Collections.Generic;
 
 namespace GroupWebApplication.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        
+
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
@@ -20,23 +17,13 @@ namespace GroupWebApplication.Controllers
 
         public IActionResult Index()
         {
-            String todayDate = DateTime.Today.ToString("yyyy-MM-dd");
-            ImageModel imgModel;
-            
-            using (var context = new AzureImageContext())
-            {
-                imgModel = context.imagedbcontext.Single(a => a.Date == todayDate);
+            return View();
+        }
 
-                while (imgModel.Media_Type == "video")
-                {
-                    var i = -1;
-                    String adjDate = DateTime.Today.AddDays(i).ToString("yyyy-MM-dd");
-                    imgModel = context.imagedbcontext.Single(a => a.Date == adjDate);
-                    i--;
-                }
-            }
-            
-            return View(imgModel);
+        public IActionResult AltIndex()
+        {
+            List<Models.ImageModel> Images = new List<Models.ImageModel>();
+            return View(Images);
         }
 
         public IActionResult Privacy()

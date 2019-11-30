@@ -1,16 +1,21 @@
-﻿@using System.Diagnostics.CodeAnalysis
-@using Microsoft.EntityFrameworkCore.Infrastructure
-@using SQLitePCL
-@model GroupWebApplication.Models.ImageModel
+﻿@using SQLitePCL
+@model GroupWebApplication.Controllers.ImageApi
 
 @{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-    <h2 class="display-4">Welcome To Our NASA Collection</h2>
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
     
-    <img src="@Html.DisplayFor(Model => Model.Url)" alt="@Html.DisplayFor(Model => Model.Title)">
+    <div id="daily"></div>
+    <img src="https://apod.nasa.gov/apod/image/1911/LighthouseMilkyWay_Salazar_960.jpg" alt="daily image">
     
 </div>
 
+<script type="text/javascript">
+    
+    document.getElementById("daily").innerHTML = '<img src="'+   +'" alt="daily image" title="'+  +'">'
+ 
+</script>
