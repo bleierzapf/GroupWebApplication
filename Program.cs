@@ -12,6 +12,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using SqlConnection = System.Data.SqlClient.SqlConnection;
+using Microsoft.Azure.KeyVault.Core;
+using Microsoft.Azure.Services.AppAuthentication;
 
 namespace GroupWebApplication
 {
@@ -19,18 +21,11 @@ namespace GroupWebApplication
     {
         public static void Main(string[] args)
         {
-            dailyImageCall();
             CreateHostBuilder(args).Build().Run();
         }
-
-        private static async Task dailyImageCall()
-        {
-            await ImageApi.GetDailyImage();
-        }
-
+        
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder => { webBuilder.UseStartup<Startup>(); });
-
     }
 }

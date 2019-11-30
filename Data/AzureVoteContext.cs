@@ -1,4 +1,7 @@
 using System;
+using System.Configuration;
+using System.Data.Common;
+using System.Runtime.InteropServices;
 using GroupWebApplication.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -9,16 +12,14 @@ namespace GroupWebApplication.Data
     {
         public DbSet<VoteModel> votedbcontext { get; set; }
         
-        /*
-        String sqlConnectionString = 
-            "Server=tcp:csd412project.database.windows.net,1433;" +
-            "Initial Catalog=NasaProject;Persist Security Info=False;" +
-            "User ID=bleierzapf;Password={dbconnection};MultipleActiveResultSets=False;" +
-            "Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+        private static DatabaseConnection dbConnection = new DatabaseConnection();
+        
+        String sqlConnectionString = dbConnection.ConnectionString;
         
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(sqlConnectionString);
-        }*/
+        }
+
     }
 }

@@ -12,6 +12,7 @@ namespace GroupWebApplication.Data
             : base(options)
         {
         }
+
         public DbSet<Models.ImageModel> ImageModel { get; set; }
     }
 }
