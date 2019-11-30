@@ -25,13 +25,14 @@ namespace GroupWebApplication.Controllers
             try
             {
                 //random information gathering
-                var month = rand.Next(1, 13);
-                var day = rand.Next(1, 30);
-                var year = rand.Next(2015, 2020);
+                //var month = rand.Next(1, 13);
+                //var day = rand.Next(1, 30);
+                //var year = rand.Next(2015, 2020);
                 //random information gathering
-                var date = "&date=" + year + "-" + month + "-" + day;
+                //var date = "&date=" + year + "-" + month + "-" + day;
 
-                var dailyPath = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY" + date;
+                //var dailyPath = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY" + date;
+                var dailyPath = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY";
 
                 _dailyImage = await GetImageAsync(_dailyImage, dailyPath);
                 ImageToDb(_dailyImage);

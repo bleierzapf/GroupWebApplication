@@ -74,6 +74,9 @@
           <e p="Index.cshtml" t="Include" />
           <e p="Privacy.cshtml" t="Include" />
         </e>
+        <e p="Image" t="Include">
+          <e p="Index.cshtml" t="Include" />
+        </e>
         <e p="ImageModels" t="Include">
           <e p="Create.cshtml" t="Include" />
           <e p="Delete.cshtml" t="Include" />
