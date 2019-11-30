@@ -15,13 +15,16 @@
       </e>
       <e p="bin" t="ExcludeRecursive" />
       <e p="Controllers" t="Include">
+        <e p="DataController.cs" t="Include" />
         <e p="HomeController.cs" t="Include" />
         <e p="ImageApi.cs" t="Include" />
         <e p="ImageController.cs" t="Include" />
+        <e p="ImageModelsController.cs" t="Include" />
       </e>
       <e p="Data" t="Include">
         <e p="ApplicationDbContext.cs" t="Include" />
-        <e p="DatabaseInitializer.cs" t="Include" />
+        <e p="AzureImageContext.cs" t="Include" />
+        <e p="AzureVoteContext.cs" t="Include" />
         <e p="ImageDbContext.cs" t="Include" />
         <e p="Migrations" t="Include">
           <e p="00000000000000_CreateIdentitySchema.cs" t="Include" />
@@ -32,9 +35,18 @@
       <e p="global.json" t="Include" />
       <e p="GroupWebApplication.csproj" t="IncludeRecursive" />
       <e p="GroupWebApplication.sln" t="IncludeFlat" />
+      <e p="Migrations" t="Include">
+        <e p="201911280008236_InitialCreate.cs" t="Include" />
+        <e p="201911280008236_InitialCreate.Designer.cs" t="Include" />
+        <e p="201911280008236_InitialCreate.resx" t="Include" />
+        <e p="Configuration.cs" t="Include" />
+      </e>
       <e p="Models" t="Include">
         <e p="ErrorViewModel.cs" t="Include" />
+        <e p="HomeModel.cs" t="Include" />
         <e p="ImageModel.cs" t="Include" />
+        <e p="SeedData.cs" t="Include" />
+        <e p="VoteModel.cs" t="Include" />
       </e>
       <e p="obj" t="ExcludeRecursive">
         <e p="Debug" t="Include">
@@ -52,9 +64,20 @@
       <e p="Views" t="Include">
         <e p="_ViewImports.cshtml" t="Include" />
         <e p="_ViewStart.cshtml" t="Include" />
+        <e p="Data" t="Include">
+          <e p="Index.cshtml" t="Include" />
+        </e>
         <e p="Home" t="Include">
+          <e p="AltIndex.cshtml" t="Include" />
           <e p="Index.cshtml" t="Include" />
           <e p="Privacy.cshtml" t="Include" />
+        </e>
+        <e p="ImageModels" t="Include">
+          <e p="Create.cshtml" t="Include" />
+          <e p="Delete.cshtml" t="Include" />
+          <e p="Details.cshtml" t="Include" />
+          <e p="Edit.cshtml" t="Include" />
+          <e p="Index.cshtml" t="Include" />
         </e>
         <e p="Shared" t="Include">
           <e p="_Layout.cshtml" t="Include" />
