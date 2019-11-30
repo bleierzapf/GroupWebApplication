@@ -52,7 +52,6 @@
         <e p="ImageModel.cs" t="Include" />
         <e p="VoteModel.cs" t="Include" />
       </e>
-      <e p="nasaAPIinfo.txt" t="Include" />
       <e p="obj" t="ExcludeRecursive">
         <e p="Debug" t="Include">
           <e p="netcoreapp3.0" t="Include">
