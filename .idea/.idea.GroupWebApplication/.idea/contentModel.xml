@@ -15,7 +15,6 @@
       </e>
       <e p="bin" t="ExcludeRecursive" />
       <e p="Controllers" t="Include">
-        <e p="DataController.cs" t="Include" />
         <e p="HomeController.cs" t="Include" />
         <e p="ImageApi.cs" t="Include" />
         <e p="ImageController.cs" t="Include" />
@@ -40,6 +39,9 @@
         <e p="201911280008236_InitialCreate.cs" t="Include" />
         <e p="201911280008236_InitialCreate.Designer.cs" t="Include" />
         <e p="201911280008236_InitialCreate.resx" t="Include" />
+        <e p="20191201150430_addvotes.cs" t="Include" />
+        <e p="20191201150430_addvotes.Designer.cs" t="Include" />
+        <e p="AzureImageContextModelSnapshot.cs" t="Include" />
         <e p="Configuration.cs" t="Include" />
       </e>
       <e p="Models" t="Include">
@@ -70,7 +72,6 @@
           <e p="Index.cshtml" t="Include" />
         </e>
         <e p="Home" t="Include">
-          <e p="AltIndex.cshtml" t="Include" />
           <e p="Index.cshtml" t="Include" />
           <e p="Privacy.cshtml" t="Include" />
         </e>

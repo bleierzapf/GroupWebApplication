@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using GroupWebApplication.Models;
 
-
 namespace GroupWebApplication.Controllers
 {
     public class HomeController : Controller
@@ -39,13 +38,7 @@ namespace GroupWebApplication.Controllers
 
             return View(imgModel);
         }
-
-        public IActionResult AltIndex()
-        {
-            List<Models.ImageModel> Images = new List<Models.ImageModel>();
-            return View(Images);
-        }
-
+        
         public IActionResult Privacy()
         {
             return View();

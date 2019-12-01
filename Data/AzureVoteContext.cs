@@ -20,6 +20,5 @@ namespace GroupWebApplication.Data
         {
             optionsBuilder.UseSqlServer(sqlConnectionString);
         }
-
     }
 }

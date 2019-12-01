@@ -9,8 +9,10 @@ namespace GroupWebApplication.Data
 {
     public class AzureImageContext : DbContext
     {
-        
         public DbSet<ImageModel> imagedbcontext { get; set; }
+        
+        //public DbSet<VoteModel> votedbcontext { get; set; }
+        //public DbSet<ImageVoteModel> imagevotedbcontext { get; set; }
 
         private static DatabaseConnection dbConnection = new DatabaseConnection();
 
