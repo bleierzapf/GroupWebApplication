@@ -1,3 +1,4 @@
+@using System.Runtime.InteropServices
 @using Microsoft.EntityFrameworkCore.Metadata.Internal
  @model IEnumerable<GroupWebApplication.Models.ImageModel>
 
@@ -9,20 +10,32 @@
 
 <table class="table">
     <tbody>
+    @{ var column = 0; }
+    
     @foreach (var image in Model)
     {
-        <tr>
-            <td>
-                <img src="@Html.DisplayFor(Model => image.Url)"
-                     alt="@Html.DisplayFor(Model => image.Title)"
-                     width="500" height="281"/>
-            </td>
-            <td>
-                <h4>@Html.DisplayFor(Model => image.Title)</h4>
-                <h5>@Html.DisplayFor(Model => image.Date)</h5>
-                @Html.DisplayFor(Model => image.Explanation)
-            </td>
-        </tr>
+        @if (column == 0)
+        {
+            @Html.Raw("<tr>");
+        }
+        
+        <td>
+            <img src="@Html.DisplayFor(Model => image.Url)"
+                 alt="@Html.DisplayFor(Model => image.Title)"
+                 width="350" height="196"/>
+            <h5>@Html.DisplayFor(Model => image.Title)</h5>
+            <h5>@Html.DisplayFor(Model => image.Date)</h5>
+        </td>
+        
+        if (column == 2)
+        {
+            @Html.Raw("</tr>");
+            column = 0;
+        }
+        else
+        {
+            column++;
+        }
     }
     </tbody>
-</table> 
+</table>
