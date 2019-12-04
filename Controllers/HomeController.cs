@@ -27,7 +27,7 @@ namespace GroupWebApplication.Controllers
             {
                 imgModel = context.imagedbcontext.Single(a => a.Date == todayDate);
 
-                while (imgModel.Media_Type == "video")
+                while (imgModel.MediaType == "video")
                 {
                     var i = -1;
                     String adjDate = DateTime.Today.AddDays(i).ToString("yyyy-MM-dd");

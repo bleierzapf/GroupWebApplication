@@ -19,13 +19,24 @@
             @Html.Raw("<tr>");
         }
         
-        <td>
-            <img src="@Html.DisplayFor(Model => image.Url)"
-                 alt="@Html.DisplayFor(Model => image.Title)"
-                 width="350" height="196"/>
-            <h5>@Html.DisplayFor(Model => image.Title)</h5>
-            <h5>@Html.DisplayFor(Model => image.Date)</h5>
-        </td>
+	<td>
+		<img src="@Html.DisplayFor(Model => image.Url)"
+			 alt="@Html.DisplayFor(Model => image.Title)"
+			 width="350" height="196" />
+		<h5>@Html.DisplayFor(Model => image.Title)</h5>
+		<h5>@Html.DisplayFor(Model => image.Date)</h5>
+		@if (!User.Identity.IsAuthenticated)
+		{
+			<a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Vote Me!!</a>
+		}
+		else
+		{
+	<form>
+		<input type="submit" name="save" value="VoteUp"
+			   formaction="/Image/VoteUp/@Html.DisplayFor(Model => image.Date)" formmethod="post" />
+	</form>
+		}
+		</td>
         
         if (column == 2)
         {

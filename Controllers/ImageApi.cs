@@ -73,7 +73,7 @@ namespace GroupWebApplication.Controllers
 
                     dailyImage.Explanation = ApostropheFix(dailyImage.Explanation);
                     sb.Append(dailyImage.Explanation + "', '");
-                    sb.Append(dailyImage.Media_Type + "', '");
+                    sb.Append(dailyImage.MediaType + "', '");
                     
                     dailyImage.Title = ApostropheFix(dailyImage.Title);
                     sb.Append(dailyImage.Title + "', '");

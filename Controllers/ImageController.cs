@@ -22,7 +22,7 @@ namespace GroupWebApplication.Controllers
 
                 foreach (var image in images)
                 {
-                    if (image.Media_Type == mediaType)
+                    if (image.MediaType == mediaType)
                     {
                         imgModel.Add(image);
                     }
@@ -33,6 +33,12 @@ namespace GroupWebApplication.Controllers
 
             return View(imgModel);
         }
+
+		[HttpPost]
+		public void VoteUp()
+		{
+			
+		}
 
         /*
         public IActionResult Index()

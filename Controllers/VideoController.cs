@@ -23,7 +23,7 @@ namespace GroupWebApplication.Controllers
 
                 foreach (var video in videos)
                 {
-                    if (video.Media_Type == mediaType)
+                    if (video.MediaType == mediaType)
                     {
                         videoModel.Add(video);
                     }
