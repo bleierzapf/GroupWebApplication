@@ -1,0 +1,29 @@
+@using Microsoft.EntityFrameworkCore.Metadata.Internal
+ @model IEnumerable<GroupWebApplication.Models.ImageModel>
+
+ @{
+     ViewData["Title"] = "Videos";
+ }
+
+ <h1>Nasa Daily Videos</h1>
+
+ <table class="table">
+     <tbody>
+     @foreach (var video in Model)
+     {
+         <tr>
+             <td>
+                 <iframe width="500"
+                         height="281"
+                         src="@Html.DisplayFor(Model => video.Url)"
+                         allowfullscreen></iframe>
+             </td>
+             <td>
+                 <h4>@Html.DisplayFor(Model => video.Title)</h4>
+                 <h5>@Html.DisplayFor(Model => video.Date)</h5>
+                 @Html.DisplayFor(Model => video.Explanation)
+             </td>
+         </tr>
+     }
+     </tbody>
+ </table> 

@@ -1,0 +1,41 @@
+@using System.Runtime.InteropServices
+@using Microsoft.EntityFrameworkCore.Metadata.Internal
+@model List<ImageModel>
+
+ @{
+     ViewData["Title"] = "Images";
+ }
+
+ <h1>Nasa Daily Images</h1>
+
+<table class="table">
+    <tbody>
+    @{ var column = 0; }
+    
+    @foreach (var image in Model)
+    {
+        @if (column == 0)
+        {
+            @Html.Raw("<tr>");
+        }
+        
+        <td>
+            <img src="@Html.DisplayFor(Model => image.Url)"
+                 alt="@Html.DisplayFor(Model => image.Title)"
+                 width="350" height="196"/>
+            <h5>@Html.DisplayFor(Model => image.Title)</h5>
+            <h5>@Html.DisplayFor(Model => image.Date)</h5>
+        </td>
+        
+        if (column == 2)
+        {
+            @Html.Raw("</tr>");
+            column = 0;
+        }
+        else
+        {
+            column++;
+        }
+    }
+    </tbody>
+</table>

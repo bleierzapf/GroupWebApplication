@@ -6,52 +6,49 @@ using GroupWebApplication.Models;
 using Newtonsoft.Json;
 using System.Data.SqlClient;
 using System.Text;
+using GroupWebApplication.Data;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore.Metadata.Conventions;
+using Microsoft.Extensions.Configuration;
+using Org.BouncyCastle.Security;
 
 namespace GroupWebApplication.Controllers
 {
     public class ImageApi
     {
         private static ImageModel _dailyImage = new ImageModel();
+        private static DatabaseConnection dbConnection = new DatabaseConnection();
 
         public static async Task GetDailyImage()
-        { 
+        {
             var rand = new Random();
             try
-                { 
+            {
+                //random information gathering
+                //var month = rand.Next(1, 13);
+                //var day = rand.Next(1, 30);
+                //var year = rand.Next(2015, 2020);
+                //random information gathering
+                //var date = "&date=" + year + "-" + month + "-" + day;
 
-                    //random information gathering
-                    var month = rand.Next(1, 13); 
-                    var day = rand.Next(1, 30);  
-                    var year = rand.Next(2015, 2020);
-                    //random information gathering
-                    String date = "&date=" + year + "-" + month + "-" + day;
-                    
-                    String dailyPath = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY" + date;
+                //var dailyPath = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY" + date;
+                var dailyPath = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY";
 
-                    _dailyImage = await GetImageAsync(_dailyImage, dailyPath); 
-                    ImageToDb(_dailyImage);
-                }
+                _dailyImage = await GetImageAsync(_dailyImage, dailyPath);
+                ImageToDb(_dailyImage);
+            }
             catch (Exception e) 
             { 
                 Console.WriteLine(e.Message); 
             }
-            
             Console.ReadLine();
-            
-            
         }
 
         private static void ImageDbToModel()
         {
             try
             {
-                String sqlConnectionString =
-                    "Server=tcp:csd412project.database.windows.net,1433;" +
-                    "Initial Catalog=NasaProject;Persist Security Info=False;" +
-                    "User ID=bleierzapf;Password={dbconnection};MultipleActiveResultSets=False;" +
-                    "Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
-                
-                
+                String sqlConnectionString = dbConnection.ConnectionString;
             }
             catch (SqlException e)
             {
@@ -64,12 +61,8 @@ namespace GroupWebApplication.Controllers
         { 
             try 
             {
-                String sqlConnectionString =
-                    "Server=tcp:csd412project.database.windows.net,1433;" +
-                    "Initial Catalog=NasaProject;Persist Security Info=False;" +
-                    "User ID=bleierzapf;Password=csd412Password;MultipleActiveResultSets=False;" +
-                    "Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
-
+                String sqlConnectionString = dbConnection.ConnectionString;
+                
                 using (SqlConnection connection = new SqlConnection(sqlConnectionString))
                 {
                     StringBuilder sb = new StringBuilder();
