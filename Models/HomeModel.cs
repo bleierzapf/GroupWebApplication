@@ -7,7 +7,6 @@ namespace GroupWebApplication.Models
 {
     public class Home
     {
-
         public String Date { get; set; }
         public String Explanation { get; set; }
         public String Title { get; set; }

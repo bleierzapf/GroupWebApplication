@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using GroupWebApplication.Models;
 
+
 namespace GroupWebApplication.Controllers
 {
     public class HomeController : Controller
@@ -20,16 +21,20 @@ namespace GroupWebApplication.Controllers
 
         public IActionResult Index()
         {
-            String todayDate = DateTime.Today.ToString("yyyy-MM-dd");
+            /* Gets current date and pulls image for current date from database. If current date media type
+             * isn't an image, moves to previous day to get image.
+             */
+            String todayDate = DateTime.Today.ToUniversalTime().ToString("yyyy-MM-dd");
+
             ImageModel imgModel;
 
             using (var context = new AzureImageContext())
             {
                 imgModel = context.imagedbcontext.Single(a => a.Date == todayDate);
-
-                while (imgModel.Media_Type == "video")
+                
+                var i = -1;
+                while (imgModel == null || imgModel.MediaType != "image")
                 {
-                    var i = -1;
                     String adjDate = DateTime.Today.AddDays(i).ToString("yyyy-MM-dd");
                     imgModel = context.imagedbcontext.Single(a => a.Date == adjDate);
                     i--;

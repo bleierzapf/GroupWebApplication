@@ -9,19 +9,20 @@
 
  <table class="table">
      <tbody>
+     <!-- Iterates through image video model and displays video link, title, date and explanation of video. -->
      @foreach (var video in Model)
      {
          <tr>
              <td>
                  <iframe width="500"
                          height="281"
-                         src="@Html.DisplayFor(Model => video.Url)"
+                         src="@Html.DisplayFor(model => video.Url)"
                          allowfullscreen></iframe>
              </td>
              <td>
-                 <h4>@Html.DisplayFor(Model => video.Title)</h4>
-                 <h5>@Html.DisplayFor(Model => video.Date)</h5>
-                 @Html.DisplayFor(Model => video.Explanation)
+                 <h4>@Html.DisplayFor(model => video.Title)</h4>
+                 <h5>@Html.DisplayFor(model => video.Date)</h5>
+                 @Html.DisplayFor(model => video.Explanation)
              </td>
          </tr>
      }

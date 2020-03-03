@@ -10,7 +10,7 @@ namespace GroupWebApplication.Controllers
     public class ImageController : Controller
     {
         // GET
-        
+        // Get all data with image media type
         public IActionResult Index()
         {
             String mediaType = "image";
@@ -22,7 +22,7 @@ namespace GroupWebApplication.Controllers
 
                 foreach (var image in images)
                 {
-                    if (image.Media_Type == mediaType)
+                    if (image.MediaType == mediaType)
                     {
                         imgModel.Add(image);
                     }

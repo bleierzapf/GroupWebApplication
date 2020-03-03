@@ -18,7 +18,7 @@ namespace GroupWebApplication.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("GroupWebApplication.Models.ImageModel", b =>
+            modelBuilder.Entity("DotNet-WebApplication.Models.ImageModel", b =>
                 {
                     b.Property<string>("Date")
                         .HasColumnType("nvarchar(450)");
@@ -43,7 +43,7 @@ namespace GroupWebApplication.Migrations
                     b.ToTable("imagedbcontext");
                 });
 
-            modelBuilder.Entity("GroupWebApplication.Models.VoteModel", b =>
+            modelBuilder.Entity("DotNet-WebApplication.Models.VoteModel", b =>
                 {
                     b.Property<string>("Date")
                         .HasColumnType("nvarchar(450)");

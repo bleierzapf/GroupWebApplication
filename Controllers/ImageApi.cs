@@ -17,11 +17,13 @@ namespace GroupWebApplication.Controllers
     public class ImageApi
     {
         private static ImageModel _dailyImage = new ImageModel();
-        private static DatabaseConnection dbConnection = new DatabaseConnection();
+        private static DatabaseConnection _dbConnection = new DatabaseConnection();
 
+        // Get daily image/video from NASA API
         public static async Task GetDailyImage()
         {
-            var rand = new Random();
+            // Random date used to populate test database.
+            //var rand = new Random();
             try
             {
                 //random information gathering
@@ -44,24 +46,12 @@ namespace GroupWebApplication.Controllers
             Console.ReadLine();
         }
 
-        private static void ImageDbToModel()
-        {
-            try
-            {
-                String sqlConnectionString = dbConnection.ConnectionString;
-            }
-            catch (SqlException e)
-            {
-                Console.WriteLine(e.ToString());
-            }
-            Console.ReadLine();
-        }
-
+        //Send daily image to Azure DB
         private static void ImageToDb(ImageModel dailyImage)
         { 
             try 
             {
-                String sqlConnectionString = dbConnection.ConnectionString;
+                String sqlConnectionString = _dbConnection.ConnectionString;
                 
                 using (SqlConnection connection = new SqlConnection(sqlConnectionString))
                 {
@@ -73,7 +63,7 @@ namespace GroupWebApplication.Controllers
 
                     dailyImage.Explanation = ApostropheFix(dailyImage.Explanation);
                     sb.Append(dailyImage.Explanation + "', '");
-                    sb.Append(dailyImage.Media_Type + "', '");
+                    sb.Append(dailyImage.MediaType + "', '");
                     
                     dailyImage.Title = ApostropheFix(dailyImage.Title);
                     sb.Append(dailyImage.Title + "', '");
@@ -98,6 +88,9 @@ namespace GroupWebApplication.Controllers
             Console.ReadLine();
         }
 
+        /* Corrects any apostrophe issues with information being brought
+         * in from NASA API call before processing into database.
+         */
         private static String ApostropheFix(String checkString)
         {
             if (checkString.Contains("'"))
@@ -108,6 +101,7 @@ namespace GroupWebApplication.Controllers
             return checkString;
         }
         
+        // JSON convert of API 
         static async Task<ImageModel> GetImageAsync(ImageModel imageModel, String path)
         {
             var httpClient = new HttpClient();
@@ -117,7 +111,7 @@ namespace GroupWebApplication.Controllers
         }
         
        
-        // do be removed
+        // to be removed
         /*
         private static void DailyImageToDataTable(ImageModel dailyImage)
         {

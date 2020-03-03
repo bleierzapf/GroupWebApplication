@@ -14,13 +14,13 @@ namespace GroupWebApplication.Data
         //public DbSet<VoteModel> votedbcontext { get; set; }
         //public DbSet<ImageVoteModel> imagevotedbcontext { get; set; }
 
-        private static DatabaseConnection dbConnection = new DatabaseConnection();
+        private static DatabaseConnection _dbConnection = new DatabaseConnection();
 
-        private String sqlConnectionString = dbConnection.ConnectionString;
+        private String _sqlConnectionString = _dbConnection.ConnectionString;
         
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(sqlConnectionString);
+            optionsBuilder.UseSqlServer(_sqlConnectionString);
         }
     }
 }

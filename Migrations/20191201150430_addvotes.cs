@@ -2,7 +2,7 @@
 
 namespace GroupWebApplication.Migrations
 {
-    public partial class addvotes : Migration
+    public partial class Addvotes : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

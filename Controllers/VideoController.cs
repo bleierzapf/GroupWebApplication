@@ -12,6 +12,7 @@ namespace GroupWebApplication.Controllers
     public class VideoController : Controller
     {
         // GET
+        // Get all data with video media type
         public IActionResult Index()
         {
             String mediaType = "video";
@@ -23,7 +24,7 @@ namespace GroupWebApplication.Controllers
 
                 foreach (var video in videos)
                 {
-                    if (video.Media_Type == mediaType)
+                    if (video.MediaType == mediaType)
                     {
                         videoModel.Add(video);
                     }

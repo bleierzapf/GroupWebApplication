@@ -3,6 +3,7 @@
     <PropertyGroup>
         <TargetFramework>netcoreapp3.0</TargetFramework>
         <UserSecretsId>aspnet-GroupWebApplication-6C7FC588-B481-460B-A7D7-B6D9F498B8BC</UserSecretsId>
+        <RootNamespace>GroupWebApplication</RootNamespace>
     </PropertyGroup>
 
 
@@ -44,6 +45,14 @@
 
     <ItemGroup>
       <Folder Include="wwwroot\logos" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Views\ImageModels\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\ImageModels\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\ImageModels\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\ImageModels\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\ImageModels\Index.cshtml" />
     </ItemGroup>
 
 </Project>

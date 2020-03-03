@@ -1,7 +1,2 @@
 # Default ignored files
 /.idea.GroupWebApplication/.idea/workspace.xml
-# Editor-based HTTP Client requests
-/.idea.GroupWebApplication/.idea/httpRequests/
-# Datasource local storage ignored files
-/.idea.GroupWebApplication/.idea/dataSources.local.xml
-/.idea.GroupWebApplication/.idea/dataSources/

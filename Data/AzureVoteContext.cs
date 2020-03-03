@@ -10,15 +10,15 @@ namespace GroupWebApplication.Data
 {
     public class AzureVoteContext : DbContext
     {
-        public DbSet<VoteModel> votedbcontext { get; set; }
+        public DbSet<VoteModel> Votedbcontext { get; set; }
         
-        private static DatabaseConnection dbConnection = new DatabaseConnection();
+        private static DatabaseConnection _dbConnection = new DatabaseConnection();
         
-        String sqlConnectionString = dbConnection.ConnectionString;
+        String _sqlConnectionString = _dbConnection.ConnectionString;
         
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(sqlConnectionString);
+            optionsBuilder.UseSqlServer(_sqlConnectionString);
         }
     }
 }

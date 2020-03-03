@@ -11,20 +11,29 @@
 <table class="table">
     <tbody>
     @{ var column = 0; }
-    
+    <!-- Iterates through image model from database. Displays images with title and date. 
+            Puts image set in a 3 column width.-->
     @foreach (var image in Model)
     {
         @if (column == 0)
         {
             @Html.Raw("<tr>");
         }
-        
+
         <td>
-            <img src="@Html.DisplayFor(Model => image.Url)"
-                 alt="@Html.DisplayFor(Model => image.Title)"
-                 width="350" height="196"/>
-            <h5>@Html.DisplayFor(Model => image.Title)</h5>
-            <h5>@Html.DisplayFor(Model => image.Date)</h5>
+            <img src="@Html.DisplayFor(model => image.Url)"
+                 alt="@Html.DisplayFor(model => image.Title)"
+                 width="350" height="196"
+                 onclick="location.href='@Html.DisplayFor(model => image.Url)'"/>
+            <h5>@Html.DisplayFor(model => image.Title)</h5>
+            <div style="float: left">
+                <h5>@Html.DisplayFor(model => image.Date)</h5>
+            </div>
+            <div style="float: right">
+                <a href="@Html.DisplayFor(model => image.Hdurl)" target="_blank">
+                    <b>HD Link</b>
+                </a>
+            </div>
         </td>
         
         if (column == 2)
